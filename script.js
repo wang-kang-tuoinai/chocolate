@@ -1,7 +1,7 @@
 // 哆啦A梦道具大全 - JavaScript
 // 在线数据存储配置
-const GITHUB_GIST_ID = ''; // 请填入你的Gist ID
-const GITHUB_TOKEN = ''; // 请填入你的访问令牌
+const GITHUB_GIST_ID = '815de4be58f7c92a42a6d5ab15ac9731'; // 你的Gist ID
+const GITHUB_TOKEN = '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'; // 你的访问令牌
 
 // 在线数据存储功能
 class OnlineDataManager {
@@ -12,6 +12,12 @@ class OnlineDataManager {
 
     // 检查是否有在线存储配置
     hasOnlineConfig() {
+        console.log('检查配置:', {
+            GIST_ID: GITHUB_GIST_ID,
+            TOKEN: GITHUB_TOKEN ? GITHUB_TOKEN.substring(0, 10) + '...' : 'null',
+            hasGistId: !!GITHUB_GIST_ID,
+            hasToken: !!GITHUB_TOKEN
+        });
         return GITHUB_GIST_ID && GITHUB_TOKEN;
     }
 
